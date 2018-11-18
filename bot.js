@@ -3,14 +3,14 @@ const client = new Discord.Client();
 var prefix = "1";
 
 client.on('ready', () => {
-  console.log(Logged in as ${client.user.tag}!);
+  console.log(`Logged in as ${client.user.tag}!`);  
 });
 
 client.on('ready', async() => {
-var server = "513819655367032853"; // ايدي السررفر
-var channel = "513819655815692291";//ايدي الروم
+var server = "513819655367032853"; 
+var channel = "513819655815692291";
     setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , ')
+    client.guilds.get(server).channels.get(channel).send('**Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , Dream , **')
     },305);
 })
 
@@ -18,13 +18,13 @@ client.on('message', message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
-  let command = message.content.split("say")[0];
+  let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
 
-  let args = message.content.split("say").slice(1);
+  let args = message.content.split(" ").slice(1);
 
   if (command == "say") {
-if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('?|`ADMINISTRATOR`ليس لديك صلاحيات`');
+if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('?|**\`ADMINISTRATOR\`ليس لديك صلاحيات`**');
    message.channel.sendMessage(args.join("  "))
    message.delete()
   }
